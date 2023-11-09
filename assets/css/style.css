@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+
+/* Variables y carga de fuentes */
+
+/* Fuentes */
+@font-face {
+  font-family: "fuente_oswald";
+  src: url("../fonts/Oswald/static/Oswald-SemiBold.ttf");
+}
+@font-face {
+  font-family: "fuente_spline";
+  src: url("../fonts/Spline_Sans/static/SplineSans-Regular.ttf");
+}
+@font-face {
+  font-family: "fuente_roboto";
+  src: url("../fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf");
+}
+
+/* Variables en la raiz */
+:root{
+  --color0: white;
+  --color1: black;
+  --color2: grey;
+  --color3: yellow;
+  --fuente1: "fuente_oswald";
+  --fuente1: "fuente_spline";
+  --fuente1: "fuente_roboto";
+}
+
+
+
+/* Estilos de la web */
+
+/* Empiezan los estilos del nav */
+nav, main, header, footer{
+  width: 100%;
+  max-width: 2560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--color0);
+}
+
+nav .sup{
+  width: 100%;
+  height: 5vh;
+  max-height: 40px;
+ 
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+nav .inf{
+  width: 100%;
+  height: 5vh;
+  max-height: 40px;
+ 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav .sup img{
+  height: 70px;
+  object-fit: cover;
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+}
+nav .inf ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3rem;
+  list-style: none;
+}
+nav .inf a{
+  text-decoration: none;  
+}
+nav .inf a:visited{
+  color: black;
+}
+nav .inf a:hover{
+  color: purple;
+  font-weight: bold;
+}
+h1{
+  font-family: "fuente_oswald";
+  color: var(--color1);
+  /* font-family: var(--fuente1); */
+}
+
+/* Terminan los estilos del nav */
+
+
+
+/* Empiezan los estilos del header */
+
+header{
+  height: 90vw;
+  background-image: url("../img/header_2560.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/* Terminan los espacios del header */
