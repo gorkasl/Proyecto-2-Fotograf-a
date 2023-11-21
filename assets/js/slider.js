@@ -15,7 +15,7 @@ const fotoActiva = document.getElementById("fotoActiva");
 
 flechaIzd.addEventListener("click", function(){
    
-    /* Recogemos el valor, escuchamos el click de la imagen flechaIzd */
+    /* Recogemos el valor, escuchamosa el click de la imagen flechaIzd */
     
 
 });
