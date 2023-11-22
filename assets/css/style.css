@@ -37,6 +37,34 @@
   font-family: var(--fuente3);
 }
 
+h1{
+  font-family: "fuente_oswald";
+  color: var(--color1);
+  font-size: 1.4rem;
+  /* font-family: var(--fuente1); */
+}
+  
+h2{
+  font-size: 1.8rem;
+  color: var(--color2);
+  font-weight: 100;  
+  margin-top: 4rem;
+}
+h3{
+  font-size: 2rem;
+  color: var(--color1);
+  font-weight: 100;
+  font-family: var(--fuente2);
+
+}
+h4{
+  font: 1.2rem;
+  font-family: var(--fuente2);
+  color: var(--color2);
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
 p{
   font-size: 1.1rem;
   letter-spacing: 1px;
@@ -74,6 +102,11 @@ nav, main, header, footer{
   justify-content: flex-start;
   align-items: flex-start;
   background-color: var(--color0);
+}
+
+nav{
+  position: fixed;
+  z-index: 100;
 }
 
 nav .sup{
@@ -124,50 +157,38 @@ nav .inf a:hover{
   color: purple;
   font-weight: bold;
 }
-h1{
-  font-family: "fuente_oswald";
-  color: var(--color1);
-  font-size: 1.4rem;
-  /* font-family: var(--fuente1); */
-}
-  
-h2{
-  font-size: 1.8rem;
-  color: var(--color2);
-  font-weight: 100;  
-}
-h3{
-  font-size: 2rem;
-  color: var(--color1);
-  font-weight: 100;
-
-}
-h4{
-  font: 1.2rem;
-  font-family: var(--fuente2);
-  color: var(--color2);
-  font-weight: 100;
-  letter-spacing: 3px;
-}
-
-/* Terminan los estilos del nav */
-
-
-
-/* Empiezan los estilos del header */
-
-header{
-  height: 90vw;
-  background-image: url("../img/header_2560.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
 .contenedor{
   user-select: none;
   color: var(--color0);
   font-family: var(--fuente1);
+}
+
+/* Estilos del Header */
+
+header{
+  transform: translateY(80px);
+  height: 90vh;
+  background-image: url("../img/header_2560.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+ 
+}
+
+header .contenedor{
+  /* background-color: aquamarine; */
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 2px;
+  font-family: var(--fuente1);
+  user-select: none;
+  color: var(--color0);
+
 }
 
 header .contenedor :nth-child(1){
@@ -211,7 +232,7 @@ header .contenedor :nth-child(8){
 /* Empiezan los estilos del main */
 
 /* Estilos seccion presentación */
-#sectpresentacion{
+/* #sectpresentacion{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -228,7 +249,7 @@ header .contenedor :nth-child(8){
   align-items: center;
   justify-content: flex-start;
   row-gap: 2rem;
-}
+} */
 
 #contenedor_servicios{
   width: 100%;
@@ -267,4 +288,50 @@ header .contenedor :nth-child(8){
   filter: saturate(1);
   cursor: pointer;
   transform: scale(1.2);
+}
+
+section, article{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: flex-start;
+}
+section{
+  margin-top: 2rem;
+}
+article{
+  margin-top: 1rem;
+  row-gap: 1rem;
+}
+.anchoEstrecho{
+  max-width: 1200px;
+  width: 95%;
+}
+
+/* SLIDER */
+#slider{
+  width: 100%;
+  max-width: 2560px;
+  height: 90vh;
+  position: relative;
+}
+#slider :nth-child(1), #slider :nth-child(2){
+  width: 150px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .5;
+  cursor: pointer;    
+}
+#slider :nth-child(1){
+  left: 2rem;
+}
+#slider :nth-child(2){
+  right: 2rem;
+}
+#fotoActiva{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
