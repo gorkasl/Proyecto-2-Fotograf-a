@@ -32,7 +32,7 @@ flechaIzd.addEventListener("click", function(){
 
     /* fotoActiva.src="./assets/img/slider1_2560.jpg" */
     /* fotoActiva.src="./assets/img/slider"+ordenSiguiente+"_2560.jpg"; */
-    fotoActiva.src=`../assets/img/slider${ordenSiguiente}_2560.jpg`;
+    fotoActiva.src=`./assets/img/slider${ordenSiguiente}_2560.jpg`;
     fotoActiva.setAttribute("orden", ordenSiguiente);
    
     })
@@ -46,15 +46,15 @@ flechaDer.addEventListener("click", function(){
     ordenPrincipal = Number(ordenPrincipal);
 
     /*condición para controlar que no se salga del total de fotos  */
-    if(ordenPrincipal === 1){
-        ordenSiguiente = numFotos;
+    if(ordenPrincipal === numFotos){
+        ordenSiguiente = 1;
     }else{
         ordenSiguiente = ordenPrincipal + 1;
     }
 
     /* fotoActiva.src="./assets/img/slider1_2560.jpg" */
     /* fotoActiva.src="./assets/img/slider"+ordenSiguiente+"_2560.jpg"; */
-    fotoActiva.src=`../assets/img/slider${ordenSiguiente}_2560.jpg`;
+    fotoActiva.src=`./assets/img/slider${ordenSiguiente}_2560.jpg`;
     fotoActiva.setAttribute("orden", ordenSiguiente);
    
     })
