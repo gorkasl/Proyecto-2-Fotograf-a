@@ -2,7 +2,7 @@
 
 var numFotos = 12; /* El slider tendrá 12 fotos */
 var ordenPrincipal, ordenSiguiente;
-var intervalo, temporizador;
+var intervalo;
 var tiempoEspera = 5000; /* (milisegundos = 5 segundos) */
 
 
@@ -36,8 +36,8 @@ flechaIzd.addEventListener("click", function(){
     fotoActiva.src=`./assets/img/slider${ordenSiguiente}_2560.jpg`;
     fotoActiva.setAttribute("orden", ordenSiguiente);
 
-    clearInterval(intervalo); /* para el intervalo que está cambiado la foto cada 5 segundos */
-    crearIntervalo(); /* Para volver a crear el intervalo */
+   
+    crearIntervalo(tiempoEspera+2000); /* Para volver a crear el intervalo */
   
     })
 
@@ -61,8 +61,8 @@ flechaDer.addEventListener("click", function(){
     fotoActiva.src=`./assets/img/slider${ordenSiguiente}_2560.jpg`;
     fotoActiva.setAttribute("orden", ordenSiguiente);
 
-    clearInterval(intervalo); /* para el intervalo que está cambiado la foto cada 5 segundos */
-    crearIntervalo(); /* Para volver a crear el intervalo */
+   
+    crearIntervalo(tiempoEspera+2000); /* Para volver a crear el intervalo */
     })
 
 /* METER FOTO RANMDOM / ZONA DE IMAGEN RANDOM CADA VEZ QUE CARGA LA PÁGINA WEB  */
@@ -72,7 +72,7 @@ flechaDer.addEventListener("click", function(){
 /* CAMBIAR FOTO PRINCIPAL EN INTERVALOS DE TIEMPO */
 
 /* crearIntervalo(tiempoEspera); */
-crearIntervalo();/* Hace la llamada a la funcion de abajo */
+crearIntervalo(tiempoEspera);/* Hace la llamada a la funcion de abajo */
 
 
 /* DECLARACIÓN FUNCIONES */
@@ -89,6 +89,10 @@ function funcion_random(){
 
 /* Función crear intervalo */
 function crearIntervalo(valorRecibido){
-    intervalo = window.setInterval(funcion_random, 5000); /* Cambia da 5 segundos */
+    /* En caso de que exista la variable intervalo anterior lo borra */
+    if(intervalo != undefined){
+        clearInterval(intervalo);
+    }
+    intervalo = window.setInterval(funcion_random, valorRecibido); /* Cambia da 5 segundos porque valorRecibido coge la variable tiempoEspera*/
 
 }
