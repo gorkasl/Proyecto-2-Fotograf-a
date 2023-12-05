@@ -55,7 +55,8 @@ h3{
   color: var(--color1);
   font-weight: 100;
   font-family: var(--fuente2);
-
+  width: 100%;
+  text-align: left; /* Justifica a la izquierda todos los h3 */
 }
 h4{
   font: 1.2rem;
@@ -148,14 +149,16 @@ nav .inf ul{
   list-style: none;
 }
 nav .inf a{
-  text-decoration: none;  
+  text-decoration: none;
+  transition: .5s;  
 }
 nav .inf a:visited{
-  color: black;
-}
+  color: var(--color2);
+ }
 nav .inf a:hover{
-  color: purple;
+  color: rgb(206, 9, 206);
   font-weight: bold;
+  transition: .5s;
 }
 
 .contenedor{
@@ -380,10 +383,10 @@ article{
   filter:sepia(1) opacity(.3);
   transition: 1s;
 }
-.persona .imagen :nth-child(1):hover{
+/* .persona .imagen :nth-child(1):hover{
   transform: rotate(20deg);
   transition: 1s;
-}
+} */
 .persona .imagen :nth-child(2):hover{
   filter: sepia(1) opacity(.7);
   transition: 1s;
