@@ -95,7 +95,7 @@ p{
 /* Estilos de la web */
 
 /* Empiezan los estilos del nav */
-nav, main, header, footer{
+nav, main, header{
   width: 100%;
   max-width: 2560px;
   display: flex;
@@ -365,6 +365,7 @@ article{
   width: 100%;
   position: relative;
   height: 350px;
+  min-width: 350px;
 }
 
 .persona .imagen :nth-child(1){
@@ -390,4 +391,57 @@ article{
 .persona .imagen :nth-child(2):hover{
   filter: sepia(1) opacity(.7);
   transition: 1s;
+}
+
+/* Estilos el footer */
+footer{
+ width: 100%; 
+ background-color: var(--color2);
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: flex-start;
+ height: 500px;
+}
+#contenidoFooter{
+  width: 100%;
+  max-width: 2560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 1rem;
+}
+#logofooter{
+  width: 300px;
+}
+#footerSuperior{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#footerSuperior .infoFooter{
+  width: 30%;
+  min-width: 300px;
+  height: 400px;
+  background-color: aquamarine;
+}
+#footerSuperior:nth-child(1){
+
+}
+
+
+#footerInferior{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 1rem;
+}
+#footerInferior p{
+  font-size: 1rem;
 }
