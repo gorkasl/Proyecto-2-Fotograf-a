@@ -6,9 +6,9 @@ const imgObjetivos = document.getElementsByClassName("imgObjetivo");
 for(const imgObjetivo of imgObjetivos){
     /* Código que se ejecuta en cada vuelta */
     imgObjetivo.addEventListener("mouseover", function(){
-        imgObjetivo.style.transform="rotate(20deg)";
+        imgObjetivo.style.transform="rotate(20deg)";/* rota 20 deg */
     })
     imgObjetivo.addEventListener("mouseout", function(){
-        imgObjetivo.style.transform="rotate(0deg)";
+        imgObjetivo.style.transform="rotate(0deg)";/* quita la rotación dejandolo en 0 deg */
     })
 }
