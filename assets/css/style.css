@@ -28,8 +28,8 @@
 :root{
   --color0: white;
   --color1: rgb(10, 10, 10);
-  --color2: rgb(126, 125, 125);
-  --color3: rgb(126, 26, 2);
+  --color2: #7e7d7d;
+  --color3: #7e1a02;
   --fuente1: "fuente_oswald";
   --fuente2: "fuente_spline";
   --fuente3: "fuente_roboto";
@@ -229,31 +229,6 @@ header .contenedor :nth-child(8){
 
 
 
-/* Terminan los espacios del header */
-
-
-/* Empiezan los estilos del main */
-
-/* Estilos seccion presentación */
-/* #sectpresentacion{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 2rem;
-}
-#sectpresentacion article{
-  max-width: 1200px;
-  width: 95%;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  row-gap: 2rem;
-} */
-
 #contenedor_servicios{
   width: 100%;
   display: flex;
@@ -411,7 +386,6 @@ footer{
 #contenedor_footer{
   width: 100%;
   max-width: 2560px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -419,12 +393,11 @@ footer{
   row-gap: 2rem;
 }
 #imagen_footer{
-  width: 200px;
+  width: 150px;
 }
 
 #contenedor_footer >:nth-child(2){
   width: 100%;
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -440,10 +413,9 @@ footer{
 #contenedor_footer .info_footer{
   width: 30%;
   min-width: 300px;
-
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   row-gap: 2rem;
 }
@@ -454,15 +426,35 @@ footer{
   flex-direction: column;
   row-gap: 1rem;
 }
+
+
 #contenedor_footer .info_footer a{
-  color: var(--colo0);
+  color: var(--color);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 100;
 }
 #contenedor_footer .info_footer ul img{
-  width: 30px;
+  width: 1.3rem;
+  filter: invert(1);
+}
+#contenedor_footer .info_footer a:hover{
+  filter: invert(0);
   filter: invert(21%) sepia(22%) saturate(2155%) hue-rotate(324deg) brightness(97%) contrast(84%);
+  transition: 1;
+}
+
+#contenedor_rrss{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  column-gap: 4.5rem;
+
+}
+#contenedor_rrss img{
+  width: 2.5rem;
 }
 
 .lista_horizonal{
