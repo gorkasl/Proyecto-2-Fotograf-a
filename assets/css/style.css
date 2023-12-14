@@ -372,17 +372,56 @@ article{
 footer{
   width: 100%;
   background-color: var(--color1);
-
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   color:var(--color0);
   font-family: var(--fuente3);
-
   padding: 4rem 0;
+  row-gap: 2rem;
 }
+
+#contenedor_form{
+  width: 100%;
+  max-width: 2560px;
+  height: 500px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5rem;
+}
+footer form{
+  width: 40%;
+  min-width: 320px;
+  max-width: 800px;
+  background-color: rgb(182, 169, 169);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+  
+}
+footer form h2{
+  color: var(--color0);
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}
+footer form input, textarea{
+  width: 100%;
+}
+#boton_enviar{
+  width: 30%;
+  min-width: 160px;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
 #contenedor_footer{
   width: 100%;
   max-width: 2560px;
@@ -429,7 +468,7 @@ footer{
 
 
 #contenedor_footer .info_footer a{
-  color: var(--color);
+  color: var(--color0);
   text-decoration: none;
   font-size: 1rem;
   font-weight: 100;
