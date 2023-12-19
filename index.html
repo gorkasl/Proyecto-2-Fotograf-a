@@ -8,6 +8,17 @@
     <link rel="shortcut icon" href="./assets/img/ICONO_150.png" type="image/x-icon">
 </head>
 <body>
+
+    <!-- Crear menú hamburguesa -->
+    
+    <input type="checkbox" name="toggle" id="toggle"><!-- Donde clicaremos para activar desactivar -->
+    <label for="toggle" class="contenedor_span"><!-- Se relaciona con el input. Como un título -->
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    
+
     <nav>
         <div class="sup">
             <img src="./assets/img/LOGO_180.png" alt="">
@@ -161,10 +172,14 @@
     <div id="contenedor_form">
         <form action="" method="post">
             <h2>Contacta con nosotros</h2>
-            <input type="text" required>Nombre
-            <input type="email" name="" id="">E-mail
-            <input type="tel" name="" id="">Teléfono
-            <textarea name="" id="" cols="30" rows="10">Texto</textarea>
+            <label for="fname">Nombre:</label>
+            <input type="text" required>
+            <label for="fname">E-mail:</label>
+            <input type="email" name="" id="">
+            <label for="fname">E-Teléfono:</label>
+            <input type="tel" name="" id="">
+            <label for="fname">Dejanos un comentario:</label>
+            <textarea name="" id="" cols="30" rows="10">Comentario</textarea>
             <input type="submit" value="ENVIAR" class="boton" id="boton_enviar">
         </form>
         <img src="" alt="">

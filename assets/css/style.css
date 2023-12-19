@@ -37,6 +37,8 @@
   font-family: var(--fuente3);
 }
 
+
+
 h1{
   font-family: "fuente_oswald";
   color: var(--color1);
@@ -50,6 +52,12 @@ h2{
   font-weight: 100;  
   margin-top: 4rem;
 }
+@media only screen and (max-width:540px){
+  h2{
+    padding: 0 1rem;
+    margin-top: 3rem;
+  }
+}
 h3{
   font-size: 2rem;
   color: var(--color1);
@@ -57,6 +65,11 @@ h3{
   font-family: var(--fuente2);
   width: 100%;
   text-align: left; /* Justifica a la izquierda todos los h3 */
+}
+@media only screen and (max-width:540px){
+  h3{
+    font-size: 1.5rem;
+  }
 }
 h4{
   font: 1.2rem;
@@ -72,6 +85,12 @@ p{
   line-height: 1.6rem;
 }
 
+@media only screen and (max-width:540px){
+  p{
+    padding: 0 1rem;
+  }
+}
+
 .boton{
   padding: .5rem 2rem;
   border-radius: 1rem;
@@ -80,7 +99,15 @@ p{
   font-weight: 100;
   letter-spacing: 3px;
   cursor: pointer;
+  font-size: 1.2rem;
 }
+@media only screen and (max-width:540px){
+  .boton{
+    background-color: var(--color3);
+    font-size: 1rem;
+  }
+}
+
 .boton:hover{
   background-color: var(--color2);
   border-color: var(--color0);
@@ -93,6 +120,12 @@ p{
 }
 
 /* Estilos de la web */
+
+/* para que no aparezca el menú hamburguesa en vista desktop */
+#toggle, .contedor_span{
+  display: none;
+}
+
 
 /* Empiezan los estilos del nav */
 nav, main, header{
@@ -113,9 +146,6 @@ nav{
 nav .sup{
   width: 100%;
   height: 5vh;
-  max-height: 40px;
- 
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -126,12 +156,11 @@ nav .sup{
 nav .inf{
   width: 100%;
   height: 5vh;
-  max-height: 40px;
- 
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: 1s;
 }
 nav .sup img{
   height: 70px;
@@ -159,6 +188,64 @@ nav .inf a:hover{
   color: rgb(206, 9, 206);
   font-weight: bold;
   transition: .5s;
+}
+
+/* Media query del nav */
+@media only screen and (max-width:540px){
+  .contenedor_span{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-flow: row wrap; /* Como poner flex direction y flex wrap */
+    align-items: center;
+    cursor: pointer;
+  }
+  .contenedor_span span{
+    width: 100%;
+    height: 3px;
+    background-color: var(--color1);
+    transition: all 25ms ease-out;/* un cuarto de segundo con una desaceleración */
+    transform-origin: 0 0;
+  }
+  nav .sup{
+    height: 10vh;
+  }
+  nav .inf{
+    position: relative;
+    background-color: var(--color0);
+    height: 90vh;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 2rem;
+    left: 100%;/* Esto lo ouclta a la derecha */
+  }
+  nav .inf ul{
+    flex-direction: column;
+    row-gap: 3rem;
+    align-items: flex-start;
+    border-left: 2px solid var(--color2);
+    padding-left: 1rem;
+  }
+  nav .inf ul li a{
+    font-size: 2rem;
+  }
+  #toggle:checked ~ .contenedor_span span:nth-last-child(1){/* Hace referencia al elemento que tiene acontinuacion del toggle, por eso lo ponemos justo encima del nav */
+    transform: rotate(-45deg) translate(1px, 0px);
+  }
+  #toggle:checked ~ .contenedor_span span:nth-last-child(2){
+    transform: rotate(0deg) scale(0.2, 0.2);
+    opacity: 0;
+  }
+  #toggle:checked ~ .contenedor_span span:nth-last-child(3){
+    transform: rotate(45deg) translate(0px, -1px);
+  }
+  #toggle:checked ~ nav .inf{
+    left: 0%;
+  }
 }
 
 .contenedor{
@@ -313,6 +400,18 @@ article{
   height: 100%;
   object-fit: cover;
 }
+@media only screen and (max-width:540px){
+  #slider :nth-child(1), #slider :nth-child(2){
+   width: 90px; 
+  }
+  #slider :nth-child(1){
+    left: 1rem;
+  }
+  #slider :nth-child(2){
+    right: 1rem;
+  }
+}
+
 #fotoActiva{
   width: 100%;
   height: 100%;
@@ -326,6 +425,7 @@ article{
   justify-content: center;
   align-items: flex-start;
   column-gap: 2rem;
+  flex-wrap: wrap;
 }
 .persona{
   width: 90%;
