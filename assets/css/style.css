@@ -512,6 +512,21 @@ footer #contenedor_form img{
   object-fit: cover;
 }
 
+footer #contenedor_form input, textarea{
+  width: 100%;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-family: var(--fuente2);
+}
+
+#contenedor_form textarea{
+  height: 100px;
+  max-height: 300px;
+  min-height: 100px;
+  width: 100%;
+  max-width: 100%;
+}
+
 footer form h2{
   color: var(--color0);
   position: relative;
