@@ -19,7 +19,7 @@ $datetime= date("Y-m-d H:i:s");
 /* Mensaje concatenado para enviar por correo */
 $contenido = "fecha de envio: ".$datetime."\nIP: ".$ip."\nNombre: ".$nombre."\nCorreo: ".$correo."\nTeléfono: ".$telefono."\nMensaje".$mensaje;
 
-$cabecera = 'From: gsanchez@diariovasco.com'."\r\n".'Reply-To:  gsanchez@diariovasco.com'."\r\n".'X-Mailer: PHP/'.phpversion();
+$cabecera = 'From: info@webda.eus'."\r\n".'Reply-To:  gsanchez@diariovasco.com'."\r\n".'X-Mailer: PHP/'.phpversion();
 
 /* Enviar correo de confirmación */
 mail($destino, "Consulta la web", $contenido,$cabecera);/* Correo que recibo yo */
