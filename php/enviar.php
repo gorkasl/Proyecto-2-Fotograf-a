@@ -3,23 +3,23 @@ ini_set('display_errors',1);
 
 /* 1. Recoger datos y comprobar */
 $destino = "gsanchez@diariovasco.com"; /* CORREO DEL ADMIN */
-$nombre = $_POST["nombre"]; /* Nombre del usuario */
-$correo = $_POST["correo"];
-$telefono = $_POST["telefono"];
-$mensaje = $_POST["mensaje"];
+$nombre = $_POST ["nombre"]; /* Nombre del usuario */
+$correo = $_POST ["correo"];
+$telefono = $_POST ["telefono"];
+$mensaje = $_POST ["mensaje"];
 
 /* datos que cogemos de tu cliente */
 /* IP */
-$ip = $_SERVER["REMOTE_ADDR"];
+$ip=$_SERVER["REMOTE_ADDR"];
 
 /* Datos que cogemos del sistema */
 /* Fecha */
-$datetime = date("y-m-d H:i:s");
+$datetime= date("Y-m-d H:i:s");
 
 /* Mensaje concatenado para enviar por correo */
 $contenido = "fecha de envio: ".$datetime."\nIP: ".$ip."\nNombre: ".$nombre."\nCorreo: ".$correo."\nTeléfono: ".$telefono."\nMensaje".$mensaje;
 
-$cabecera = 'from: info@webda.eus'."\r\n".'Reply-To:  info@webda.eus'."\r\n".'X-Mailer: PHP/'.phpversion();
+$cabecera = 'From: gsanchez@diariovasco.com'."\r\n".'Reply-To:  gsanchez@diariovasco.com'."\r\n".'X-Mailer: PHP/'.phpversion();
 
 /* Enviar correo de confirmación */
 mail($destino, "Consulta la web", $contenido,$cabecera);/* Correo que recibo yo */
