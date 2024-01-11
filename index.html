@@ -56,7 +56,10 @@
                 <h3>TUS FOTOGRAFOS EN DONOSTIA</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores fugiat aliquid <b>blanditiis pariatur</b> sed repellat possimus neque dicta maiores doloremque saepe architecto nihil voluptatum debitis quos eaque, autem iure adipisci!</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam doloribus nulla expedita. Vero maxime aspernatur accusamus necessitatibus, est saepe suscipit impedit eveniet accusantium distinctio ratione odio nulla atque. Neque, tempore?</p>
-                <div class="boton"><p>Contactar</p></div>
+                <a href="#hitoContacto">
+                    <div class="boton"><p>Contactar</p></div>
+                </a>
+                
             </article>
 
             <article class="anchoEstrecho">
@@ -140,7 +143,7 @@
               <div class="persona">
                 <div class="imagen">
                     <img class="imgObjetivo" src="./assets/img/avatar_objetivo.jpg" alt="">
-                    <img src="./assets/img/brutas/avatar1_350.jpg" alt="">
+                    <img src="./assets/img/avatar1_350.jpg" alt="">
                 </div>
                 <h4>NOMBRE APELLIDO</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, quasi.</p>
@@ -148,7 +151,7 @@
               <div class="persona">
                 <div class="imagen">
                     <img class="imgObjetivo" src="./assets/img/avatar_objetivo.jpg" alt="">
-                    <img src="./assets/img/brutas/avatar2_350.jpg" alt="">
+                    <img src="./assets/img/avatar2_350.jpg" alt="">
                 </div>
                 <h4>NOMBRE APELLIDO</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, quasi.</p>
@@ -156,7 +159,7 @@
               <div class="persona">
                 <div class="imagen">
                     <img class="imgObjetivo" src="./assets/img/avatar_objetivo.jpg" alt="">
-                    <img src="./assets/img/brutas/avatar3_350.jpg" alt="">
+                    <img src="./assets/img/avatar3_350.jpg" alt="">
                 </div>
                 <h4>NOMBRE APELLIDO</h4>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, quasi.</p>
@@ -168,14 +171,14 @@
 
     </main>
 
-<footer>
+<footer id="hitoContacto">
     <div id="contenedor_form">
         <form action="" method="post">
             <h2>Contacta con nosotros</h2>
-            <input type="text" required>
-            <input type="email" name="" id="">
-            <input type="tel" name="" id="">
-            <textarea name="" id="" cols="30" rows="10">Escribe aquí tu comentario</textarea>
+            <input type="text" name="Nombre" required placeholder="Nombre (mínimo 4 caracteres)" minlength="4" maxlength="40">
+            <input type="email" name="correo" id="" placeholder="Email" maxlength="80">
+            <input type="tel" name="" id="" placeholder="Teléfono" maxlength="9">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Escribe aquí tu comentario"></textarea>
             <input type="submit" value="ENVIAR" class="boton" id="boton_enviar">
         </form>
         <img src="./assets/img/servicio_6_600.jpg" alt="">

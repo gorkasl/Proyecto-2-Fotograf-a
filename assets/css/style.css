@@ -5,6 +5,7 @@
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 
@@ -27,7 +28,7 @@
 /* Variables en la raiz */
 :root{
   --color0: white;
-  --color1: rgb(10, 10, 10);
+  --color1: rgb(58, 58, 58);
   --color2: #7e7d7d;
   --color3: #7e1a02;
   --fuente1: "fuente_oswald";
@@ -84,7 +85,10 @@ p{
   letter-spacing: 1px;
   line-height: 1.6rem;
 }
-
+a{
+  text-decoration: none;
+  color: inherit;
+}
 @media only screen and (max-width:540px){
   p{
     padding: 0 1rem;
@@ -248,12 +252,6 @@ nav .inf a:hover{
   }
 }
 
-.contenedor{
-  user-select: none;
-  color: var(--color0);
-  font-family: var(--fuente1);
-}
-
 /* Estilos del Header */
 
 header{
@@ -270,6 +268,8 @@ header{
 header .contenedor{
   /* background-color: aquamarine; */
   width: 500px;
+  margin-top: 3rem;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -278,7 +278,6 @@ header .contenedor{
   font-family: var(--fuente1);
   user-select: none;
   color: var(--color0);
-
 }
 
 header .contenedor :nth-child(1){
@@ -426,6 +425,7 @@ article{
   align-items: flex-start;
   column-gap: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 .persona{
   width: 90%;
@@ -491,6 +491,7 @@ footer{
   align-items: center;
   justify-content: center;
   column-gap: 5rem;
+  margin-bottom: 3rem;
 }
 footer #contenedor_form form{
   width: 40%;
@@ -501,15 +502,19 @@ footer #contenedor_form form{
   align-items: flex-start;
   justify-content: flex-start;
   row-gap: 1rem;
-  
+  background-color: var(--color2);
+  padding: 1rem;
+  height: 500px;
+  border-radius: 3%;
 }
 
 footer #contenedor_form img{
   width: 40%;
   min-width: 320px;
-  max-width: 800px;
+  max-width: 550px;
   height: 500px;
   object-fit: cover;
+  border-radius: 3%;
 }
 
 footer #contenedor_form input, textarea{
@@ -537,7 +542,7 @@ footer form input, textarea{
   width: 100%;
 }
 #boton_enviar{
-  width: 30%;
+  width: 30%!important;
   min-width: 160px;
   position: relative;
   transform: translateX(-50%);
@@ -561,7 +566,7 @@ footer form input, textarea{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
 }
 #contenedor_footer >:nth-child(3){
