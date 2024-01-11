@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors',1);
+ini_set('display_errors',0);
 
 /* 1. Recoger datos y comprobar */
 $destino = "gsanchez@diariovasco.com"; /* CORREO DEL ADMIN */
