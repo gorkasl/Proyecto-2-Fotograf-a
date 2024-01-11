@@ -2,7 +2,7 @@
 ini_set('display_errors',0);
 
 /* 1. Recoger datos y comprobar */
-$destino = "gsanchez@diariovasco.com"; /* CORREO DEL ADMIN */
+$destino = "info@webda.eus"; /* CORREO DEL ADMIN */
 $nombre = $_POST ["nombre"]; /* Nombre del usuario */
 $correo = $_POST ["correo"];
 $telefono = $_POST ["telefono"];
