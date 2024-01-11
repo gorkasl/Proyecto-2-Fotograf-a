@@ -10,7 +10,7 @@ $mensaje = $_POST ["mensaje"];
 
 /* datos que cogemos de tu cliente */
 /* IP */
-$ip=$_SERVER["REMOTE_ADDR"];
+$ip=$_SERVER['REMOTE_ADDR'];
 
 /* Datos que cogemos del sistema */
 /* Fecha */
@@ -27,6 +27,6 @@ mail($destino, "Consulta la web", $contenido,$cabecera);/* Correo que recibo yo 
 mail($correo, "Hemos recibido tu consulta",$contenido,$cabecera);
 
 /* Redirigir a index.html y salir de aquí */
-header("location:.../index.html?enviado=correo enviado");
+header("location:../index.html?enviado=correo enviado");
 
 ?>
