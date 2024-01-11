@@ -17,7 +17,7 @@ $ip=$_SERVER['REMOTE_ADDR'];
 $datetime= date("Y-m-d H:i:s");
 
 /* Mensaje concatenado para enviar por correo */
-$contenido = "fecha de envio: ".$datetime."\nIP: ".$ip."\nNombre: ".$nombre."\nCorreo: ".$correo."\nTeléfono: ".$telefono."\nMensaje".$mensaje;
+$contenido = "fecha de envio: ".$datetime."\nIP: ".$ip."\nNombre: ".$nombre."\nCorreo: ".$correo."\nTeléfono: ".$telefono."\nMensaje: ".$mensaje;
 
 $cabecera = 'From: info@webda.eus'."\r\n".'Reply-To:  info@webda.eus'."\r\n".'X-Mailer: PHP/'.phpversion();
 
