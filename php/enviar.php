@@ -2,7 +2,10 @@
 
 // INSTANCIAMOS RECURSO
 require_once "./includes/_config.php";
+require_once "./class/_comprobaciones.php";
 
+//Creamos la variable
+$comprobacion = new clase_comprobaciones;
 
 if(isset($_POST)){
 /* 1. Recoger datos y comprobar */
@@ -12,7 +15,7 @@ if(isset($_POST)){
     $telefono = $_POST ["telefono"];
     $mensaje = $_POST ["mensaje"];
 
-/*      // comprobamos que el nombre no venga vacío
+     // comprobamos que el nombre no venga vacío
      if($comprobacion->comprobarVacio($nombre)){    
         header("location:../index.html?fallo=1#hitoContacto");
         die; //salimos de este PHP aquí, sin ejecutar el resto de líneas posteriores.
@@ -57,7 +60,7 @@ if(isset($_POST)){
             die;
         }
         // limpiamos de cualquier caracter usado en scripts maliciosos
-        $comprobacion->filtrarValorLight($mensaje); */
+        $comprobacion->filtrarValorLight($mensaje);
     
     
 
