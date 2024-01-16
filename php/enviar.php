@@ -12,7 +12,7 @@ if(isset($_POST)){
     $telefono = $_POST ["telefono"];
     $mensaje = $_POST ["mensaje"];
 
-     // comprobamos que el nombre no venga vacío
+/*      // comprobamos que el nombre no venga vacío
      if($comprobacion->comprobarVacio($nombre)){    
         header("location:../index.html?fallo=1#hitoContacto");
         die; //salimos de este PHP aquí, sin ejecutar el resto de líneas posteriores.
@@ -57,7 +57,7 @@ if(isset($_POST)){
             die;
         }
         // limpiamos de cualquier caracter usado en scripts maliciosos
-        $comprobacion->filtrarValorLight($mensaje);
+        $comprobacion->filtrarValorLight($mensaje); */
     
     
 
