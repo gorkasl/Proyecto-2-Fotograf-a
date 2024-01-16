@@ -1,32 +1,86 @@
 <?php
-ini_set('display_errors',0);
 
+// INSTANCIAMOS RECURSO
+require_once "./includes/_includes.php";
+
+
+if(isset($_POST)){
 /* 1. Recoger datos y comprobar */
-$destino = "gsanchez@diariovasco.com"; /* CORREO DEL ADMIN */
-$nombre = $_POST ["nombre"]; /* Nombre del usuario */
-$correo = $_POST ["correo"];
-$telefono = $_POST ["telefono"];
-$mensaje = $_POST ["mensaje"];
+    $destino = "gsanchez@diariovasco.com"; /* CORREO DEL ADMIN */
+    $nombre = $_POST ["nombre"]; /* Nombre del usuario */
+    $correo = $_POST ["correo"];
+    $telefono = $_POST ["telefono"];
+    $mensaje = $_POST ["mensaje"];
 
-/* datos que cogemos de tu cliente */
-/* IP */
-$ip=$_SERVER['REMOTE_ADDR'];
+     // comprobamos que el nombre no venga vacío
+     if($comprobacion->comprobarVacio($nombre)){    
+        header("location:../index.html?fallo=1#hitoContacto");
+        die; //salimos de este PHP aquí, sin ejecutar el resto de líneas posteriores.
+    }
 
-/* Datos que cogemos del sistema */
-/* Fecha */
-$datetime= date("Y-m-d H:i:s");
+     // limpiamos de cualquier caracter usado en scripts maliciosos
+     $comprobacion->filtrarValorLight($nombre);
 
-/* Mensaje concatenado para enviar por correo */
-$contenido = "fecha de envio: ".$datetime."\nIP: ".$ip."\nNombre: ".$nombre."\nCorreo: ".$correo."\nTeléfono: ".$telefono."\nMensaje: ".$mensaje;
+ // VALIDACIONES DE CORREO
+    // comprobamos que el correo no venga vacío
+    if($comprobacion->comprobarVacio($correo)){    
+        header("location:../index.html?fallo=2#hitoContacto");
+        die;
+    }
+    // limpiamos de cualquier caracter usado en scripts maliciosos
+    $comprobacion->filtrarValorLight($correo);
+    // comprobamos que el correo sea un correo
+    // llamamos a la función de la clase comprobaciones
+    if(!$comprobacion->validar_email($correo)){    
+        header("location:../index.html?fallo=3#hitoContacto");
+        die;
+    }
 
-$cabecera = 'From: info@webda.eus'."\r\n".'Reply-To:  info@webda.eus'."\r\n".'X-Mailer: PHP/'.phpversion();
+    // VALIDACIONES DE TELÉFONO
+    // comprobamos que el teléfono no venga vacío
+    if($comprobacion->comprobarVacio($telefono)){    
+        header("location:../index.html?fallo=4#hitoContacto");
+        die;
+    }
+        // limpiamos de cualquier caracter usado en scripts maliciosos y quitamos espacios al número
+        $comprobacion->filtrarValor($telefono);
+        // comprobamos si es número
+    if(!$comprobacion->validar_numero($telefono)){
+            header("location:../index.html?fallo=5#hitoContacto");
+            die;
+    }
 
-/* Enviar correo de confirmación */
-mail($destino, "Consulta la web", $contenido,$cabecera);/* Correo que recibo yo */
+        // COMPROBACIONES MENSAJE
+        // comprobamos que el nombre no venga vacío
+        if($comprobacion->comprobarVacio($mensaje)){    
+            header("location:../index.html?fallo=6#hitoContacto");
+            die;
+        }
+        // limpiamos de cualquier caracter usado en scripts maliciosos
+        $comprobacion->filtrarValorLight($mensaje);
+    
+    
 
-mail($correo, "Hemos recibido tu consulta",$contenido,$cabecera);
 
-/* Redirigir a index.html y salir de aquí */
-header("location:../index.html?enviado=correo enviado");
+    /* datos que cogemos de tu cliente */
+    /* IP */
+    $ip=$_SERVER['REMOTE_ADDR'];
 
+    /* Datos que cogemos del sistema */
+    /* Fecha */
+    $datetime= date("Y-m-d H:i:s");
+
+    /* Mensaje concatenado para enviar por correo */
+    $contenido = "fecha de envio: ".$datetime."\nIP: ".$ip."\nNombre: ".$nombre."\nCorreo: ".$correo."\nTeléfono: ".$telefono."\nMensaje: ".$mensaje;
+
+    $cabecera = 'From: info@webda.eus'."\r\n".'Reply-To:  info@webda.eus'."\r\n".'X-Mailer: PHP/'.phpversion();
+
+    /* Enviar correo de confirmación */
+    mail($destino, "Consulta la web", $contenido,$cabecera);/* Correo que recibo yo */
+
+    mail($correo, "Hemos recibido tu consulta",$contenido,$cabecera);
+
+    /* Redirigir a index.html y salir de aquí */
+    header("location:../index.html?enviado=correo enviado");
+}
 ?>
