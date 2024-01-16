@@ -1,7 +1,7 @@
 <?php
 
 // INSTANCIAMOS RECURSO
-require_once "./includes/_includes.php";
+require_once "./includes/_config.php";
 
 
 if(isset($_POST)){
