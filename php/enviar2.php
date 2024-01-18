@@ -4,7 +4,7 @@
 require_once "./includes/_config.php";
 require_once "./class/_comprobaciones.php";
 
-//Creamos la variable
+//Creamos el objeto comprobación de tipo clase comprobaciones
 $comprobacion = new clase_comprobaciones;
 
 if(isset($_POST)){
