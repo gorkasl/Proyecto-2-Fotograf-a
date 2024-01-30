@@ -46,17 +46,24 @@ h1{
   font-size: 1.4rem;
   /* font-family: var(--fuente1); */
 }
+@media only screen and (max-width:540px){
+  h1{
+    width: 161px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
   
 h2{
   font-size: 1.8rem;
   color: var(--color2);
   font-weight: 100;  
-  margin-top: 4rem;
+  margin-top: 2rem;
+  
 }
 @media only screen and (max-width:540px){
   h2{
-    padding: 0 1rem;
-    margin-top: 3rem;
+    padding: 0 1rem;    
   }
 }
 h3{
@@ -66,6 +73,7 @@ h3{
   font-family: var(--fuente2);
   width: 100%;
   text-align: left; /* Justifica a la izquierda todos los h3 */
+  margin-top: 2rem;
 }
 @media only screen and (max-width:540px){
   h3{
@@ -100,16 +108,10 @@ a{
   border-radius: 1rem;
   border: 1px solid var(--color1);
   color: var(--color1);
-  font-weight: 100;
+  font-weight: bold;
   letter-spacing: 3px;
   cursor: pointer;
   font-size: 1.2rem;
-}
-@media only screen and (max-width:540px){
-  .boton{
-    background-color: var(--color3);
-    font-size: 1rem;
-  }
 }
 
 .boton:hover{
@@ -145,6 +147,7 @@ nav, main, header{
 nav{
   position: fixed;
   z-index: 100;
+  top: 0;
 }
 
 nav .sup{
@@ -173,6 +176,11 @@ nav .sup img{
   left: 1rem;
   top: 0.5rem;
 }
+@media only screen and (max-width:540px){
+  nav .sup img{
+    height: 60px;
+  }
+}
 nav .inf ul{
   display: flex;
   flex-direction: row;
@@ -195,14 +203,14 @@ nav .inf a:hover{
 }
 
 /* Media query del nav */
-@media only screen and (max-width:540px){
+@media only screen and (max-width:750px){
   .contenedor_span{
     position: fixed;
     top: 1rem;
     right: 1rem;
     z-index: 2000;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     display: flex;
     flex-flow: row wrap; /* Como poner flex direction y flex wrap */
     align-items: center;
@@ -221,7 +229,6 @@ nav .inf a:hover{
   nav .inf{
     position: relative;
     background-color: var(--color0);
-    height: 90vh;
     width: 100%;
     align-items: flex-start;
     padding-top: 2rem;
@@ -249,13 +256,14 @@ nav .inf a:hover{
   }
   #toggle:checked ~ nav .inf{
     left: 0%;
+    height: 90vh;
   }
 }
 
 /* Estilos del Header */
 
 header{
-  transform: translateY(80px);
+  margin-top: 80px;
   height: 90vh;
   background-image: url("../img/header_2560.jpg");
   background-size: cover;
@@ -281,7 +289,7 @@ header .contenedor{
 }
 
 header .contenedor :nth-child(1){
-  font-size: 5vw;
+  font-size: 4.9vw;
   line-height: 5vw;
 }
 header .contenedor :nth-child(2){
@@ -312,7 +320,40 @@ header .contenedor :nth-child(8){
   font-size: 1vw;
   line-height: 5vw;
 }
-
+@media only screen and (max-width:700px){
+  header .contenedor :nth-child(1){
+    font-size: 10.9vw;
+    line-height:10.5vw;
+  }
+  header .contenedor :nth-child(2){
+    font-size: 7vw;
+    line-height: 6.8vw;
+  }
+  header .contenedor :nth-child(3){
+    font-size: 17.8vw;
+    line-height: 14vw;
+  }
+  header .contenedor :nth-child(4){
+    font-size: 5.65vw;
+    line-height: 7vw;
+  }
+  header .contenedor :nth-child(5){
+    font-size: 11.5vw;
+    line-height: 8.2vw;
+  }
+  header .contenedor :nth-child(6){
+    font-size: 8.5vw;
+    line-height: 9vw;
+  }
+  header .contenedor :nth-child(7){
+    font-size: 23.5vw;
+    line-height: 17vw;
+  }
+  header .contenedor :nth-child(8){
+    font-size: 4vw;
+    line-height: 8vw;
+  }
+}
 
 
 #contenedor_servicios{
@@ -321,7 +362,7 @@ header .contenedor :nth-child(8){
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: 2rem;
+  column-gap: 2rem;
   flex-wrap: wrap;
 }
 #contenedor_servicios .servicio{
@@ -485,12 +526,13 @@ footer{
 #contenedor_form{
   width: 100%;
   max-width: 2560px;
-  height: 500px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   column-gap: 5rem;
+  row-gap: 2rem;
   margin-bottom: 3rem;
 }
 footer #contenedor_form form{
@@ -515,6 +557,20 @@ footer #contenedor_form img{
   height: 500px;
   object-fit: cover;
   border-radius: 3%;
+}
+@media only screen and (max-width:540px){
+  footer{
+    padding-top: 2rem;
+  }
+  footer #contenedor_form form{
+    width: 95%;
+  }
+  
+  footer #contenedor_form img{
+    width: 100%;
+    height: 300px;
+    border-radius: inherit;
+  }
 }
 
 footer #contenedor_form input, textarea{
@@ -558,6 +614,13 @@ footer form input, textarea{
   justify-content: flex-start;
   row-gap: 2rem;
 }
+
+@media only screen and (max-width:540px){
+  #contenedor_footer{
+    row-gap: 4rem;
+  }
+}
+
 #imagen_footer{
   width: 150px;
 }
@@ -568,6 +631,8 @@ footer form input, textarea{
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 #contenedor_footer >:nth-child(3){
   display: flex;
@@ -585,6 +650,22 @@ footer form input, textarea{
   justify-content: flex-start;
   row-gap: 2rem;
 }
+
+@media only screen and (max-width:540px){
+  #contenedor_footer .info_footer {
+    width: 90%;
+    align-items: center;
+  }
+  #contenedor_footer .info_footer #alinear {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+  }
+  #contenedor_footer .info_footer #contenedor_rrss {
+    justify-content: center;
+  }
+}
+
 
 #contenedor_footer .info_footer ul{
   list-style: none;
